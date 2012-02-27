@@ -1,12 +1,4 @@
 --------------------------------------------------------------------------------------------------------------------
---                                                                                                                --
--- Mexico Framework for Corona SDK (http://www.coronasdk.com)                                                     --
---                                                                                                                --
---  + Author : Marcus Wilhelm <marcus@gooseflesh.de>                                                              --
---  + Url    : http://www.gooseflesh.de/mexico                                                                    --
---  + License: CC by 3.0 (http://creativecommons.org/licenses/by/3.0/)                                            --
---                                                                                                                --
---------------------------------------------------------------------------------------------------------------------
 local mexico = require "mexico"                                -- load the mexico framework                       --
 --------------------------------------------------------------------------------------------------------------------
 --                                                                                                                --
