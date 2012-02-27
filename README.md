@@ -1,10 +1,11 @@
-# Mexico - [Corona](http://www.anscamobile.com/corona/) Scene Management & More
+# Mexico - Object Oriented Programming with [Corona SDK](http://www.anscamobile.com/corona/)
 
-## Features
+## CORE Features
 
-   - OOP
-   - Scene Director (with powerful features and transitions)
-   
+   - Class - use inheritance in your own project
+   - Mixins - add common functionality to your objecs
+   - Styles - create display objects css-a-like
+   - Scene Director - easy to use, powerful and extensible
 
 
 
