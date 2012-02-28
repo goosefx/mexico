@@ -305,5 +305,5 @@ function TransitionManager:dispose()                           --               
   mexico.Object.dispose(self)                                  -- base or super dispose call                      --
 end                                                            --                                                 --
 --------------------------------------------------------------------------------------------------------------------
-return TransitionManager                                       -- Returns the class definition                    --
+return TransitionManager                                                                                          --
 --------------------------------------------------------------------------------------------------------------------
