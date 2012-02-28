@@ -45,7 +45,7 @@ end                                                            --               
 function TransitionManager:add(target, params)                 --                                                 --
   mexico.Object.assert(self)                                   -- test if self is not null and not disposed       --   
   local itemId   = self.nextId                                 -- next item id                                    --
-  self.nextId    = itemId + 1                                  -- increate next id                                --
+  self.nextId    = itemId + 1                                  -- increase next id                                --
 --------------------------------------------------------------------------------------------------------------------
   local item     = {                                           -- create transition state item                    --
     id           = itemId,                                     --   unique id                                     --
@@ -189,8 +189,7 @@ end                                                            -- target transit
 -- A unique id identifing the transition. This is NOT the handle returned by corona's transition.from.            --
 --                                                                                                                --
 -- Remarks:                                                                                                       --
--- Note that adding a from-transition to a paused transition manager my result in an unexpected behavior, since   --
--- the transition will be first applied to the target object then the manager will be resumed.                    --
+-- Note that adding a from-transition to a paused transition manager may result in an unexpected behavior.        --
 --                                                                                                                --
 -- See Corona SDK documentation (http://developer.anscamobile.com/node/2407) for more information.                --
 --                                                                                                                --
@@ -249,7 +248,7 @@ function TransitionManager:resume(id)                          --               
   local item = self.items[id]                                  -- get item by id                                  --
   if (item) then                                               -- check if item is not null                       --
     item:resume()                                              --   resume item                                   --
-    return true                                                --   transition paused                             --
+    return true                                                --   transition resumed                            --
   end                                                          --                                                 --
   return false                                                 -- failed but ok                                   --
 end                                                            --                                                 --
@@ -260,7 +259,7 @@ end                                                            --               
 --------------------------------------------------------------------------------------------------------------------
 function TransitionManager:cancelAll()                         --                                                 --
   mexico.Object.assert(self)                                   -- test if self is not null and not disposed       --   
-  print("Transitionmanager: cancelAll")                        --                                                 --
+  print("TransitionManager: cancelAll")                        --                                                 --
   for id,item in pairs(self.items) do                          -- iterate over all transition items               --
     item:cancel()                                              --   cancel the transition                         --
     item = nil                                                 --                                                 --
@@ -275,7 +274,7 @@ end                                                            --               
 --------------------------------------------------------------------------------------------------------------------
 function TransitionManager:pauseAll()                          --                                                 --
   mexico.Object.assert(self)                                   -- test if self is not null and not disposed       --   
-  print("Transitionmanager: pauseAll")                         --                                                 --
+  print("TransitionManager: pauseAll")                         --                                                 --
   self.isPaused = true                                         -- will auto pause all further added transitions   --
   for id,item in pairs(self.items) do                          -- iterate over all transition items               --
     item:pause()                                               --   pause the transition                          --
@@ -288,7 +287,7 @@ end                                                            --               
 --------------------------------------------------------------------------------------------------------------------
 function TransitionManager:resumeAll()                         --                                                 --
   mexico.Object.assert(self)                                   -- test if self is not null and not disposed       --   
-  print("Transitionmanager: resumeAll")                        --                                                 --
+  print("TransitionManager: resumeAll")                        --                                                 --
   self.isPaused = false                                        --                                                 --
   for id,item in pairs(self.items) do                          -- iterate over all transition items               --
     item:resume()                                              --   resume the transition                         --
@@ -296,7 +295,7 @@ function TransitionManager:resumeAll()                         --               
 end                                                            --                                                 --
 --------------------------------------------------------------------------------------------------------------------
 --                                                                                                                --
---                                                                                                                --
+-- Disposes the manager and releases all resources (all running transitions will be canceled).                    --
 --                                                                                                                --
 --------------------------------------------------------------------------------------------------------------------
 function TransitionManager:dispose()                           --                                                 --
@@ -306,5 +305,5 @@ function TransitionManager:dispose()                           --               
   mexico.Object.dispose(self)                                  -- base or super dispose call                      --
 end                                                            --                                                 --
 --------------------------------------------------------------------------------------------------------------------
-return TransitionManager                                                                                          --
+return TransitionManager                                       -- Returns the class definition                    --
 --------------------------------------------------------------------------------------------------------------------

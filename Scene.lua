@@ -44,16 +44,6 @@ function Scene:init(name)
 end
 
 --
--- Load the scene.
---
-function Scene:clear()
-  mexico.Object.assert(self)
-  self:stop() -- always stop scene before clear
-  mexico.View.clear(self) -- base or super call
-  
-end
-
---
 -- Clear the scene.
 --
 function Scene:clear()
